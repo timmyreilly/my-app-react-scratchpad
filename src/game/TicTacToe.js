@@ -1,6 +1,9 @@
 import React from "react"; 
 import Link from "react-router"; 
 
+import '../index.css';
+
+
 function Square(props) {
     return (
         <button className="square" onClick={props.onClick}>
@@ -44,7 +47,7 @@ class Board extends React.Component {
     }
 }
 
-class Game extends React.Component {
+export default class Game extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
