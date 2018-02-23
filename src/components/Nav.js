@@ -20,15 +20,14 @@ export default class Nav extends React.Component {
         const homeClass = location.pathname === "/" ? "active" : "";
         const todoClass = location.pathname.match(/^\/todos/) ? "active" : "";
         const aboutClass = location.pathname.match(/^\/archives/) ? "active" : "";
-        const navClass = collapsed ? "collapsed" : "";
-
+        const navClass = collapsed ? "collapse" : "";
+        
         return (
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-
                 <div class="container">
-                    <div class="navbar-header">>
-                    <button type="button" class="navbar-toggle" onClick={this.toggleCollapse.bind(this)} >
-                            <span class="sr-only">Toggle Navigation</span>
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" onClick={this.toggleCollapse.bind(this)} >
+                            <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
