@@ -18,21 +18,30 @@ export default class Nav extends React.Component {
         const { location } = this.props;
         const { collapsed } = this.state;
         const featuredClass = location.pathname === "/" ? "active" : "";
+        const homeClass = location.pathname === "/" ? "active" : ""; 
+        const aboutClass = location.pathname.match(/^\/archives/) ? "active" : ""; 
+        const navClass = collapsed ? "collapsed" : "";
 
         return (
-            <div>
-                <div class="container">
-                    <button type="button" class="navbar-toggle" onClick={this.toggleCollapse.bind(this)} >
-                        <span class="sr-only">{this.location || "cheese"}</span>
-                    </button>
-                </div>
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <div>
-                    <ul class="nav navbar-nav">
-                        <li><IndexLink to="/" onClick={this.toggleCollapse.bind(this)}>Home</IndexLink></li>
-                        <li><IndexLink to="about" onClick={this.toggleCollapse.bind(this)}>About</IndexLink></li> 
-                    </ul>
+                    <div class="container">
+                        <button type="button" class="navbar-toggle" onClick={this.toggleCollapse.bind(this)} >
+                            <span class="sr-only">Toggle Navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                    <div class={"navbar-collapse " + navClass} id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="homeClass"><IndexLink to="/" onClick={this.toggleCollapse.bind(this)}>Home</IndexLink></li>
+                            <li class="aboutClass"><IndexLink to="about" onClick={this.toggleCollapse.bind(this)}>About</IndexLink></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
+            </nav>
         )
     }
 }
