@@ -18,6 +18,7 @@ export default class Nav extends React.Component {
         const { location } = this.props;
         const { collapsed } = this.state;
         const homeClass = location.pathname === "/" ? "active" : "";
+        const todoClass = location.pathname.match(/^\/todos/) ? "active" : "";
         const aboutClass = location.pathname.match(/^\/archives/) ? "active" : "";
         const navClass = collapsed ? "collapsed" : "";
 
@@ -41,6 +42,9 @@ export default class Nav extends React.Component {
                             </li>
                             <li class={aboutClass}>
                                 <Link to="about" onClick={this.toggleCollapse.bind(this)}>About</Link>
+                            </li>
+                            <li class={todoClass}>
+                                <Link to="todos" onClick={this.toggleCollapse.bind(this)}>Todos</Link>
                             </li>
                         </ul>
                     </div>
