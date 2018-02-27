@@ -6,7 +6,7 @@ export default class TodoList extends React.Component {
     createNew(e){
         if(e.which === 13){
             this.props.store.createTodo(e.target.value)
-            e.targer.value = "";
+            e.target.value = "";
         }
     }
 
