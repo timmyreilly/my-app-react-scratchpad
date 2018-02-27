@@ -4,6 +4,7 @@
 /node_modules
 
 /redux/node_modules
+/mobx/node_modules
 
 # testing
 /coverage
