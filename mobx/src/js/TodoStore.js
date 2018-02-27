@@ -3,7 +3,7 @@ import { computed, observable } from 'mobx'
 class Todo {
     @observable value 
     @observable id 
-    @observable NavigationCompletedEvent
+    @observable complete
     
     constructor(value){
         this.value = value
